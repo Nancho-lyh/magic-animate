@@ -14,6 +14,15 @@ seed:           [1]
 steps:          25
 guidance_scale: 7.5
 
+coords_type: "key_in"
+point_coords:  [256 256]
+text_prompt: "stand on the street of NewYork City"
+point_labels: "1"
+dilate_kernel_size: "15"
+output_dir: "results"
+sam_model_type: "vit_h"
+sam_ckpt: "pretrained_models/sam/sam_vit_h_4b8939.pth"
+
 source_image:
   - "inputs/applications/source_image/monalisa.png"
   - "inputs/applications/source_image/demo4.png"

@@ -43,7 +43,7 @@ import math
 from pathlib import Path
 
 class MagicAnimate():
-    def __init__(self, config="configs/prompts/animation.yaml") -> None:
+    def __init__(self, config="../configs/prompts/animation.yaml") -> None:
         print("Initializing MagicAnimate Pipeline...")
         *_, func_args = inspect.getargvalues(inspect.currentframe())
         func_args = dict(func_args)

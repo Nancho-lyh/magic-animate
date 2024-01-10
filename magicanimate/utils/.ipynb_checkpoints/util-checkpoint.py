@@ -17,6 +17,14 @@ from typing import Union
 from tqdm import tqdm
 from einops import rearrange
 
+def load_img_to_array(img_p):
+    img = Image.open(img_p)
+    if img.mode == "RGBA":
+        img = img.convert("RGB")
+    return np.array(img)
+
+def save_array_to_img(img_arr, img_p):
+    Image.fromarray(img_arr.astype(np.uint8)).save(img_p)
 
 def save_videos_grid(videos: torch.Tensor, path: str, rescale=False, n_rows=6, fps=25):
     videos = rearrange(videos, "b c t h w -> t b c h w")
